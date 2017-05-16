@@ -12,6 +12,7 @@ from pyardrone import ARDrone
 from  pygame import mixer
 from sklearn.model_selection import train_test_split
 
+# Instancias de las clases
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 communication = communications.CommunicationManager()
 filtering = filterings.FilteringManager()
@@ -35,22 +36,23 @@ scaler = StandardScaler()
 scaler.fit(x_train)
 X_train = scaler.transform(x_train)
 X_test = scaler.transform(x_eval)
-# Creamos clasificador
 
+
+# Creación del clasificador y entrenamiento
 clf_neuronal = MLPClassifier(solver='lbfgs', alpha=0.000000000001, early_stopping=True, max_iter=9,
                              hidden_layer_sizes=12)
 
 clf_neuronal.fit(X_train, y_train)
 
 
-
+# Declaración de los vectores a rellenar
 x = []
 y = []
 z = []
 digitos_prediccion=[]
 tiempo_inicial = time.time()
 
-
+# Método para realizar peticiones de aceleración y esperar cuando se procese una muestra
 def adquieredatos():
     i=0
     tiempo_inicial_adquisición = time.time()
@@ -59,11 +61,11 @@ def adquieredatos():
         if len(x)>=10*(i+1):
             time.sleep(0.3)
             i+=1
-
         time.sleep(0.25)
-
     print('Tiempo de adquisición:' +str(time.time()-tiempo_inicial_adquisición)+' segundos.')
 
+
+# Método para leer los datos, clasificarlos y ejecutar ordenes del dron
 def leedatos():
     contador=-1
     tiempo_inicial_lectura=time.time()
@@ -110,7 +112,6 @@ def leedatos():
                             drone.takeoff()
                             alertamovimiento.play()
                             time.sleep(0.1)
-                            #time.sleep(2)
                         else: # dron esta volando
                             timex=time.time()
                             while time.time()-timex<=2:
@@ -188,7 +189,7 @@ def leedatos():
         time.sleep(0.25)
     print(digitos_prediccion)
 
-
+# Método para realizar las clasificaciones
 def Clasificador(iteracion):
             print('Longitud de X: '+str(len(x)))
             test_data = normalize(digitos_prediccion[0+(30*(iteracion)):30+((iteracion)*30)])
@@ -196,18 +197,15 @@ def Clasificador(iteracion):
             prediccion = clf_neuronal.predict(test_data)
             return prediccion
 
-
-
-
-
+# Declaración de los hilos
 peticion_aceleracion = Thread(target=adquieredatos)
 lectura_almacenado = Thread(target=leedatos)#
 
-#Espera a tener los datos de navegación para iniciar los threads
-
+# Espera de los datos de navegación para iniciar los hilos
 drone.navdata_ready.wait()
 peticion_aceleracion.start()
 lectura_almacenado.start()
 
-
-
+# Si los hilos han acabado finalizar la comunicación con el reloj
+if not lectura_almacenado.isAlive():
+    communication.close_serial_port()

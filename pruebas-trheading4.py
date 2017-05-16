@@ -9,7 +9,7 @@ from libs import communications, filterings, graphics, datalog, normalizado
 from sklearn.preprocessing import normalize, StandardScaler
 from sklearn.neural_network import MLPClassifier
 from pyardrone import ARDrone
-from  pygame import mixer
+from pygame import mixer
 from sklearn.model_selection import train_test_split
 
 # Instancias de las clases
@@ -24,8 +24,7 @@ graphic.set_plot_parameters()
 drone=ARDrone()
 
 # Datos de la base de datos para realizar la clasificación
-datos = np.genfromtxt( 'BaseDatos.csv',
-        delimiter=';')
+datos = np.genfromtxt('BaseDatos.csv',delimiter=';')
 digitos = normalize(datos[:, :-1])
 etiquetas = datos[:, -1]
 x_train, x_eval, y_train, y_eval = train_test_split(digitos, etiquetas, test_size=0.5,
@@ -71,8 +70,8 @@ def leedatos():
     tiempo_inicial_lectura=time.time()
     n_iteraciones = 0
     mixer.init()
-    alertamovimiento = mixer.Sound("/Users/DeskBell.wav")
-    alertamodo = mixer.Sound("/Users/buzzer.wav")
+    alertamovimiento = mixer.Sound("DeskBell.wav")
+    alertamodo = mixer.Sound("buzzer.wav")
     n_pruebas = 0
     old_prediction = []
     old_prediction.append(0)

@@ -8,15 +8,12 @@ import sys
 #Imports relacionados con Machine Learning, métricas,preprocesado de datos..clasificadores.
 from sklearn.preprocessing import normalize
 from sklearn.model_selection import cross_val_score, cross_val_predict, ShuffleSplit, train_test_split
-from sklearn import metrics
-from sklearn.neural_network import MLPClassifier
-from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import zero_one_loss
 from sklearn.ensemble import AdaBoostClassifier
 
 #Datos de la base de datos para realizar la clasificación
-datos = np.genfromtxt('/Users/Adrián/eZ430-Chronos-master (2)/data/MuestrasBDD/ManoIZQ/BaseDatos.csv', delimiter = ';')
+datos = np.genfromtxt('BaseDatos.csv', delimiter = ';')
 digitos = normalize(datos[:, :-1])
 etiquetas = datos[:, -1]
 
@@ -26,7 +23,6 @@ x_train, x_eval, y_train, y_eval = train_test_split(digitos, etiquetas, test_siz
 n_estimators = 400
 
 #Instancias de los clasificadores y entrenamiento
-#clf_MLP = MLPClassifier(solver='lbfgs', alpha=0.000000000001, early_stopping=True, validation_fraction=0.15, max_iter=10) #Redes Neuronales
 clf_stump = DecisionTreeClassifier(max_depth=1, min_samples_leaf=1) #Stump significa tocón
 clf_stump.fit(x_train, y_train)
 clf_stump_err = 1-clf_stump.score(x_eval, y_eval)

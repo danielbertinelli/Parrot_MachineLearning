@@ -20,7 +20,7 @@ report = datalog.DatalogManager()
 filtros = normalizado.Normalizador()
 communication.open_serial_port()
 graphic.set_plot_parameters()
-
+drone=ARDrone()
 
 # Datos de la base de datos para realizar la clasificación
 datos = np.genfromtxt( 'BaseDatos.csv',
@@ -68,6 +68,15 @@ def leedatos():
     contador=-1
     tiempo_inicial_lectura=time.time()
     n_iteraciones = 0
+    mixer.init()
+    alertamovimiento = mixer.Sound("/Users/DeskBell.wav")
+    alertamodo = mixer.Sound("/Users/buzzer.wav")
+    n_pruebas = 0
+    old_prediction = []
+    old_prediction.append(0)
+    drone.trim()
+    modo = True  # Por defecto esta en vertical pues al inicio el dron esta en el suelo.
+    cont_predicciones = 0
 
     while (time.time()-tiempo_inicial_lectura)<=40:
         bytestoread, inbyte = communication.read_data()
@@ -96,23 +105,86 @@ def leedatos():
                 if prediccion == 1:
                     print('arriba')
                     time.sleep(1)
+                    if modo == True: #movimientos verticales
+                        if drone.state.fly_mask == False and old_prediction[cont_predicciones-1]==1: #está en el suelo y el movimiento anterior ha sido hacia arriba (2 arriba pa despegar)
+                            drone.takeoff()
+                            alertamovimiento.play()
+                            time.sleep(0.1)
+                            #time.sleep(2)
+                        else: # dron esta volando
+                            timex=time.time()
+                            while time.time()-timex<=2:
+                                drone.move(up=0.3)
+                            alertamovimiento.play()
+                            time.sleep(0.1)
+                    else: #movimientos plano horizontal
+                        if drone.state.fly_mask == True: #está volando
+                            time1=time.time()
+                            while time.time()-time1<=2:
+                                drone.move(backward=0.1)
+                            alertamovimiento.play()
+                            time.sleep(0.1)
+                    cont_predicciones += 1
 
-                if prediccion == 2:
+                elif prediccion == 2:
                     print('abajo')
                     time.sleep(1)
-                if prediccion == 3:
+
+                    if modo == True: #movimientos verticales
+                        timex2=time.time()
+                        while time.time()-timex2<=2:
+                            drone.move(down=0.3)
+                        alertamovimiento.play()
+                        time.sleep(0.1)
+                    else: #movimientos horizontales
+                        if drone.state.fly_mask == True: #volando
+                            time1 = time.time()
+                            while time.time() - time1 <= 2:
+                                drone.move(forward=0.1)
+                            alertamovimiento.play()
+                            time.sleep(0.1)
+                    cont_predicciones += 1
+
+                elif prediccion == 3:
                     print('derecha')
                     time.sleep(1)
-                if prediccion == 4:
+                    cont_predicciones += 1
+                    time2 = time.time()
+                    while time.time() - time2 <= 2:
+                        drone.move(right=0.1)
+                    alertamovimiento.play()
+                    time.sleep(0.1)
+
+
+                elif prediccion == 4:
                     print('izquierda')
                     time.sleep(1)
+                    cont_predicciones += 1
+                    time1 = time.time()
+                    while time.time() - time1 <= 2:
+                        drone.move(left=0.1)
+                    alertamovimiento.play()
+                    time.sleep(0.1)
+
                 if prediccion == 5:
                     print('modo2')
                     time.sleep(1)
-                if prediccion==0:
+                    if drone.state.fly_mask==True and old_prediction[cont_predicciones - 1] == 5:
+                        drone.land()
+                        alertamovimiento.play()
+                        time.sleep(0.1)
+                    else:
+                        modo = not modo
+                        alertamodo.play()
+                        time.sleep(0.1)
+                    cont_predicciones += 1
+
+                elif prediccion==0:
                     print('random')
                     time.sleep(1)
-
+                    cont_predicciones += 1
+                if cont_predicciones >= 1:
+                    old_prediction.append(int(prediccion))
         time.sleep(0.25)
     print(digitos_prediccion)
 
@@ -130,11 +202,12 @@ def Clasificador(iteracion):
 
 peticion_aceleracion = Thread(target=adquieredatos)
 lectura_almacenado = Thread(target=leedatos)#
-# graficado=Thread(target=Graficos)
 
+#Espera a tener los datos de navegación para iniciar los threads
+
+drone.navdata_ready.wait()
 peticion_aceleracion.start()
 lectura_almacenado.start()
-
 
 
 

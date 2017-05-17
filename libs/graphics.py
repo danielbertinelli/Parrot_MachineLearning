@@ -14,6 +14,7 @@ class GraphicsManager():
         dot.set_xdata(x_axis_acceleration)
         dot.set_ydata(y_axis_acceleration)
 
+
     def plot_close(self):
         plt.close()
 
@@ -21,8 +22,8 @@ class GraphicsManager():
         global fig
         global ax
         fig, ax = plt.subplots()
-        ax.set_xlim(-255,255)
-        ax.set_ylim(-255,255)
+        ax.set_xlim(-127,127)
+        ax.set_ylim(-127,127)
         global dot
         dot, = ax.plot(0,0,'ro',markersize=20, color='c')
 

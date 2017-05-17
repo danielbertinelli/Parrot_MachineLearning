@@ -206,5 +206,5 @@ peticion_aceleracion.start()
 lectura_almacenado.start()
 
 # Si los hilos han acabado finalizar la comunicación con el reloj
-if not lectura_almacenado.isAlive():
+if lectura_almacenado.isAlive():
     communication.close_serial_port()

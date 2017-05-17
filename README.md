@@ -10,4 +10,8 @@ El código presente en este repositorio permite actualmente iniciar la conexión
 
 -El script basedatosthreading.py permite introducir nuevas muestras a la base de datos (BaseDatos.xlsx), esta base de datos debe ser guardada como .csv (MS-DOS) posteriormente.
 
--El script pruebasvarias.py permite realizar mesuras de precisión y validación cruzada de diferentes algoritmos clasificadores.
+-El script pruebasvarias.py permite realizar medidas de precisión y validación cruzada de diferentes algoritmos clasificadores.
+
+-El script pruebas-threading4.py implementa los comandos de la libreria pyardrone para permitir el pilotaje del dron.
+
+-El script pruebas-threading.py es una versión posterior de pruebas-threading3.py con el graficado de movimientos.

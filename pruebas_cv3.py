@@ -1,0 +1,43 @@
+from sklearn import svm, datasets
+from sklearn.model_selection import GridSearchCV
+import numpy as np
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import classification_report
+from sklearn.svm import SVC
+from sklearn.neural_network import MLPClassifier
+from sklearn.preprocessing import normalize, StandardScaler
+
+datos = np.genfromtxt('BaseDatos.csv', delimiter = ';')
+digitos = normalize(datos[:, :-1])
+etiquetas = datos[:, -1]
+X_train, X_test, y_train, y_test = train_test_split(
+    digitos, etiquetas, test_size=0.5, random_state=5)
+parameters = {'max_iter': [1,10,15,20,25,50,100,150,200], 'hidden_layer_sizes': [1,10,15,20,25,50,100,150,200]}
+svr = MLPClassifier(solver='lbfgs', alpha=0.000000000001, early_stopping=True)
+clf = GridSearchCV(svr, parameters,cv=5)
+clf.fit(X_train,y_train)
+
+print("Best parameters set found on development set:")
+print()
+print(clf.best_params_)
+print()
+print("Grid scores on development set:")
+print()
+means = clf.cv_results_['mean_test_score']
+stds = clf.cv_results_['std_test_score']
+for mean, std, params in zip(means, stds, clf.cv_results_['params']):
+    print("%0.3f (+/-%0.03f) for %r"
+          % (mean, std * 2, params))
+print()
+
+print("Detailed classification report:")
+print()
+print("The model is trained on the full development set.")
+print("The scores are computed on the full evaluation set.")
+print()
+y_true, y_pred = y_test, clf.predict(X_test)
+print(classification_report(y_true, y_pred))
+print()
+

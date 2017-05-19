@@ -103,6 +103,7 @@ def leedatos():
                 prediccion = Clasificador(n_iteraciones)
                 n_iteraciones = n_iteraciones + 1
 
+                print(old_prediction)
                 if prediccion == 1:
                     print('arriba')
                     time.sleep(1)
@@ -113,15 +114,15 @@ def leedatos():
                             time.sleep(0.1)
                         else: # dron esta volando
                             timex=time.time()
-                            while time.time()-timex<=2:
-                                drone.move(up=0.3)
+                            while time.time()-timex<=1:
+                                drone.move(up=0.6)
                             alertamovimiento.play()
                             time.sleep(0.1)
                     else: #movimientos plano horizontal
                         if drone.state.fly_mask == True: #está volando
                             time1=time.time()
-                            while time.time()-time1<=2:
-                                drone.move(backward=0.1)
+                            while time.time()-time1<=1:
+                                drone.move(backward=0.2)
                             alertamovimiento.play()
                             time.sleep(0.1)
                     cont_predicciones += 1
@@ -132,15 +133,15 @@ def leedatos():
 
                     if modo == True: #movimientos verticales
                         timex2=time.time()
-                        while time.time()-timex2<=2:
-                            drone.move(down=0.3)
+                        while time.time()-timex2<=1:
+                            drone.move(down=0.6)
                         alertamovimiento.play()
                         time.sleep(0.1)
                     else: #movimientos horizontales
                         if drone.state.fly_mask == True: #volando
                             time1 = time.time()
-                            while time.time() - time1 <= 2:
-                                drone.move(forward=0.1)
+                            while time.time() - time1 <= 1:
+                                drone.move(forward=0.2)
                             alertamovimiento.play()
                             time.sleep(0.1)
                     cont_predicciones += 1
@@ -150,8 +151,8 @@ def leedatos():
                     time.sleep(1)
                     cont_predicciones += 1
                     time2 = time.time()
-                    while time.time() - time2 <= 2:
-                        drone.move(right=0.1)
+                    while time.time() - time2 <= 1:
+                        drone.move(right=0.2)
                     alertamovimiento.play()
                     time.sleep(0.1)
 
@@ -161,8 +162,8 @@ def leedatos():
                     time.sleep(1)
                     cont_predicciones += 1
                     time1 = time.time()
-                    while time.time() - time1 <= 2:
-                        drone.move(left=0.1)
+                    while time.time() - time1 <= 1:
+                        drone.move(left=0.2)
                     alertamovimiento.play()
                     time.sleep(0.1)
 
@@ -206,5 +207,3 @@ peticion_aceleracion.start()
 lectura_almacenado.start()
 
 # Si los hilos han acabado finalizar la comunicación con el reloj
-if lectura_almacenado.isAlive():
-    communication.close_serial_port()

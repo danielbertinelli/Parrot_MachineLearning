@@ -10,7 +10,7 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import normalize, StandardScaler
 
 np.random.seed(10)
-datos = np.genfromtxt('BaseDatos.csv', delimiter = ';')
+datos = np.genfromtxt('datos_muestra.csv', delimiter = ';')
 digitos = normalize(datos[:, :-1])
 etiquetas = datos[:, -1]
 vector_barrido=[]
@@ -23,7 +23,7 @@ print(vector_barrido)
 X_train, X_test, y_train, y_test = train_test_split(
     digitos, etiquetas, test_size=0.5, random_state=5)
 parameters = {'max_iter': vector_barrido , 'hidden_layer_sizes': vector_barrido}
-skf = StratifiedKFold(n_splits=5, random_state=5)
+skf = StratifiedKFold(n_splits=2, random_state=5)
 mlp = MLPClassifier(solver='lbfgs', early_stopping=False)
 clf = GridSearchCV(mlp, parameters,cv=skf)
 clf.fit(X_train,y_train)

@@ -23,18 +23,18 @@ graphic.set_plot_parameters()
 
 
 # Datos de la base de datos para realizar la clasificación
-datos = np.genfromtxt( 'BaseDatos.csv',
+datos = np.genfromtxt( 'datos_muestra.csv',
         delimiter=';')
 digitos = normalize(datos[:, :-1])
 etiquetas = datos[:, -1]
-x_train, x_eval, y_train, y_eval = train_test_split(digitos, etiquetas, test_size=0.5,
-                                                    train_size=0.5,
+x_train, x_eval, y_train, y_eval = train_test_split(digitos, etiquetas, test_size=0,
+                                                    train_size=1,
                                                     random_state=1982)
 tiempo_inicial = time.time()
 scaler = StandardScaler()
 scaler.fit(x_train)
 X_train = scaler.transform(x_train)
-X_test = scaler.transform(x_eval)
+#X_test = scaler.transform(x_eval)
 # Creamos clasificador
 
 clf_neuronal = MLPClassifier(solver='lbfgs', alpha=0.000000000001, early_stopping=True, max_iter=9,

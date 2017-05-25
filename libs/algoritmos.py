@@ -2,11 +2,13 @@ import numpy as np
 from sklearn.preprocessing import normalize, StandardScaler
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
+from sklearn import metrics
 import time
-
+from sklearn.model_selection import cross_val_score
 tiempo_inicial = time.time()
 scaler = StandardScaler()
 
+np.random.seed(777)
 
 
 # Creación del clasificador y entrenamiento
@@ -27,13 +29,14 @@ class Algoritmos():
 
         scaler.fit(x_train)
         X_train = scaler.transform(x_train)
-
+        X_test = scaler.transform(x_eval)
 
         # Creación del clasificador y entrenamiento
 
 
         clf_neuronal.fit(X_train, y_train)
-
+        cv1 = cross_val_score(clf_neuronal, X_test, y_eval, cv=3)
+        print("Precisión Neuronal: %0.2f (+/- %0.2f)" % (cv1.mean(), cv1.std() * 2))
 
     # Método para realizar las clasificaciones
     def Clasificador(self, iteracion,digitos_prediccion):
@@ -41,3 +44,5 @@ class Algoritmos():
         test_data = scaler.transform(test_data)
         prediccion = clf_neuronal.predict(test_data)
         return prediccion
+
+

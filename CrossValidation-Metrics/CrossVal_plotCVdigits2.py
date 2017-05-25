@@ -9,18 +9,18 @@ from sklearn import datasets
 
 vector_barrido = []
 mlp = MLPClassifier(solver='lbfgs', early_stopping=False)
-datos = np.genfromtxt('BaseDatos.csv', delimiter = ';')
+datos = np.genfromtxt('muestra_datos.csv', delimiter = ';')
 X = (datos[:, :-1])
 y = datos[:, -1]
-for i in range(100):
+for i in range(25):
     i+=1
     vector_barrido.append(i)
-maxiter = vector_barrido
+hiddenlayers = vector_barrido
 
 scores = list()
 scores_std = list()
-for mi in maxiter:
-    mlp.max_iter = mi
+for hl in hiddenlayers:
+    mlp.hidden_layer_sizes = hl
     this_scores = cross_val_score(mlp, X, y, n_jobs=1)
     scores.append(np.mean(this_scores))
     scores_std.append(np.std(this_scores))
@@ -29,13 +29,13 @@ for mi in maxiter:
 import matplotlib.pyplot as plt
 plt.figure(1, figsize=(4, 3))
 plt.clf()
-plt.plot(maxiter, scores, label='CV score')
-plt.plot(maxiter, np.array(scores) + np.array(scores_std), 'b--',label='CV máx score')
-plt.plot(maxiter, np.array(scores) - np.array(scores_std), 'b--',label='CV min score')
+plt.plot(hiddenlayers, scores,label='CV score')
+plt.plot(hiddenlayers, np.array(scores) + np.array(scores_std), 'b--',label='CV máx score')
+plt.plot(hiddenlayers, np.array(scores) - np.array(scores_std), 'b--',label='CV min score')
+locs,labels = plt.yticks()
 plt.legend()
-locs, labels = plt.yticks()
 plt.yticks(locs, list(map(lambda x: "%g" % x, locs)))
-plt.ylabel('CV score')
-plt.xlabel('Máx. Iterations')
+plt.ylabel('Valoración CV')
+plt.xlabel('Número de Capas ocultas')
 plt.ylim(0, 1.1)
 plt.show()

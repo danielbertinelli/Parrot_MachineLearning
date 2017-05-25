@@ -14,10 +14,10 @@ from sklearn.metrics import zero_one_loss
 from sklearn.ensemble import AdaBoostClassifier, GradientBoostingClassifier
 from sklearn.preprocessing import normalize, StandardScaler
 from sklearn.model_selection import cross_val_score, cross_val_predict, ShuffleSplit, train_test_split, validation_curve, StratifiedKFold
-
+np.random.seed(5)
 
 #Datos de la base de datos para realizar la clasificación
-datos = np.genfromtxt('BaseDatos.csv', delimiter = ';')
+datos = np.genfromtxt('muestra_datos.csv', delimiter = ';')
 digitos = normalize(datos[:, :-1])
 etiquetas = datos[:, -1]
 x_train, x_eval, y_train, y_eval = train_test_split(digitos, etiquetas, test_size=0.5,
@@ -65,8 +65,8 @@ print("Confusion matrix Decision Tree:\n%s" % metrics.confusion_matrix(expected,
 print("Confusion matrix MLP Classifier:\n%s" % metrics.confusion_matrix(expected, predicted_neu))
 
 #crossvalidation scores
-cv1 = cross_val_score(clf_neuronal, X_test, y_eval, cv=10)
-cv2 = cross_val_score(clf_decisiontree, x_eval, y_eval, cv=10)
+cv1 = cross_val_score(clf_neuronal, X_test, y_eval, cv=3)
+cv2 = cross_val_score(clf_decisiontree, x_eval, y_eval, cv=3)
 
 
 #print('Scores validación cruzada: Stump:'+str(cv1) +' Tree:'+str(cv2)+' AdaBoost Discreto:'+str(cv3)+' GradientBoost:'+str(cv4))

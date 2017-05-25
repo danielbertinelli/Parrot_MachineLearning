@@ -10,7 +10,7 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import normalize, StandardScaler
 
 np.random.seed(10)
-datos = np.genfromtxt('datos_muestra.csv', delimiter = ';')
+datos = np.genfromtxt('muestra_datos.csv', delimiter = ';')
 digitos = normalize(datos[:, :-1])
 etiquetas = datos[:, -1]
 vector_barrido=[]

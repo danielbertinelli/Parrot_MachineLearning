@@ -13,7 +13,7 @@ from sklearn.metrics import zero_one_loss
 from sklearn.ensemble import AdaBoostClassifier
 
 #Datos de la base de datos para realizar la clasificación
-datos = np.genfromtxt('BaseDatos.csv', delimiter = ';')
+datos = np.genfromtxt('muestra_datos.csv', delimiter = ';')
 digitos = normalize(datos[:, :-1])
 etiquetas = datos[:, -1]
 

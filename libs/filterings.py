@@ -29,6 +29,27 @@ class FilteringManager:
         if x_axis_acceleration[x_samples_counter] > 127:  # sign in order to direction
             x_axis_acceleration[x_samples_counter] = (255 - x_axis_acceleration[x_samples_counter] + 1) * -1
 
+    def filter_aceleration_pro(self,aceleration,bool):
+        if bool == True:
+            for i in range (len(aceleration)-1):
+                if aceleration[i]<=4:
+                    aceleration[i]=0
+                elif aceleration[i]-aceleration[i-1]<=5:
+                    aceleration[i]=aceleration[i]
+                if aceleration[i]>127:
+                    aceleration[i]=(255-aceleration[i]+1)*-1
+        else:
+            for i in range (len(aceleration)):
+                if aceleration[i]<=4:
+                    aceleration[i]=0
+                elif aceleration[i]-aceleration[i-1]<=5:
+                    aceleration[i]=aceleration[i]
+                if aceleration[i]>127:
+                    aceleration[i]=(255-aceleration[i]+1)*-1
+
+
+
+
     def handside_mode(self, x_axis_acceleration, y_axis_acceleration, handside):
         if handside is 'left':
             x_axis_acceleration = x_axis_acceleration * -1

@@ -14,7 +14,7 @@ np.random.seed(777) #Semilla aleatoria para que las pruebas de precisión sean s
 i = input('Elige entre las dos opciones: [0]Configuración predeterminada, [1]Configuración personalizada:')
 i = int(i)
 gestionador = gestiondatos.GestiondeDatos()
-
+velocidad_adquisicion = 0
 print('Cargado gestionador')
 if i==0:
     print('Modo predeterminado elegido')
@@ -35,14 +35,12 @@ if i==0:
         velocidad_adquisicion = 4
 
     peticion_aceleracion = Thread(target=gestionador.adquieredatos,args=(velocidad_adquisicion,))
-    lectura_orden = Thread(target=gestionador.lee_plotea_ordena)  #
+    lectura_orden = Thread(target=gestionador.leedatos)  #
     clasificar = Thread(target=gestionador.clasifica_muestras)
     #iniciar los hilos
     peticion_aceleracion.start()
     lectura_orden.start()
     clasificar.start()
-
-
 
 
 elif i ==1:
@@ -70,14 +68,16 @@ elif i ==1:
     algoritmos.Algoritmos().Entrena_algoritmo(filename + '.csv')
     print('Algoritmo MLP entrenado')
     # Declaración de los hilos
-    peticion_aceleracion2 = Thread(target=gestionador.adquieredatos3,args=(velocidad,))
-    lectura_orden = Thread(target=gestionador.lee_plotea_ordena)  #
-
+    peticion_aceleracion2 = Thread(target=gestionador.adquieredatos,args=(velocidad,))
+    lectura_orden = Thread(target=gestionador.leedatos)  #
+    clasificar = Thread(target=gestionador.clasifica_muestras)
     # iniciar los hilos
     var = input('Pulsa enter para comenzar a pilotar el drone')
     peticion_aceleracion2.start()
     print('Iniciada la adquisición de movimientos')
     lectura_orden.start()
+    print('Iniciada la clasificación de movimientos')
+    clasificar.start()
     print('Iniciada la clasificación de movimientos')
 
 

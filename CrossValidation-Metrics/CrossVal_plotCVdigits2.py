@@ -6,10 +6,10 @@ import numpy as np
 from sklearn.model_selection import cross_val_score
 from sklearn import datasets
 
-
+np.random.seed(7)
 vector_barrido = []
 mlp = MLPClassifier(solver='lbfgs', early_stopping=False)
-datos = np.genfromtxt('muestra_datos.csv', delimiter = ';')
+datos = np.genfromtxt('v8.csv', delimiter = ';')
 X = (datos[:, :-1])
 y = datos[:, -1]
 for i in range(25):

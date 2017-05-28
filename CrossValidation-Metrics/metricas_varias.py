@@ -17,7 +17,7 @@ from sklearn.model_selection import cross_val_score, cross_val_predict, ShuffleS
 np.random.seed(5)
 
 #Datos de la base de datos para realizar la clasificación
-datos = np.genfromtxt('muestra_datos.csv', delimiter = ';')
+datos = np.genfromtxt('v8.csv', delimiter = ';')
 digitos = normalize(datos[:, :-1])
 etiquetas = datos[:, -1]
 x_train, x_eval, y_train, y_eval = train_test_split(digitos, etiquetas, test_size=0.5,

@@ -36,11 +36,11 @@ if i==0:
 
     peticion_aceleracion = Thread(target=gestionador.adquieredatos,args=(velocidad_adquisicion,))
     lectura_orden = Thread(target=gestionador.lee_plotea_ordena)  #
-    clasificar = Thread(target=gestionador.clasifica_muestras)
+
     #iniciar los hilos
     peticion_aceleracion.start()
     lectura_orden.start()
-    clasificar.start()
+
 
 
 
@@ -70,7 +70,7 @@ elif i ==1:
     algoritmos.Algoritmos().Entrena_algoritmo(filename + '.csv')
     print('Algoritmo MLP entrenado')
     # Declaración de los hilos
-    peticion_aceleracion2 = Thread(target=gestionador.adquieredatos3,args=(velocidad,))
+    peticion_aceleracion2 = Thread(target=gestionador.adquieredatos,args=(velocidad,))
     lectura_orden = Thread(target=gestionador.lee_plotea_ordena)  #
 
     # iniciar los hilos

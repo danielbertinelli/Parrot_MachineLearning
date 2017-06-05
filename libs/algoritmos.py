@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.preprocessing import normalize, StandardScaler
 from sklearn.neural_network import MLPClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 import time
@@ -12,9 +13,9 @@ np.random.seed(777)
 
 
 # Creación del clasificador y entrenamiento
-clf_neuronal = MLPClassifier(solver='lbfgs', alpha=0.000000000001, early_stopping=True, max_iter=9,
-                             hidden_layer_sizes=12)
-
+#clf_neuronal = MLPClassifier(solver='lbfgs', alpha=0.000000000001, early_stopping=True, max_iter=9,
+ #                            hidden_layer_sizes=12)
+clf_neuronal = DecisionTreeClassifier()
 class Algoritmos():
 
     # Entrenamiento del algoritmo clasificador
@@ -42,7 +43,9 @@ class Algoritmos():
     def Clasificador(self, iteracion,digitos_prediccion):
         test_data = normalize(digitos_prediccion[0 + (30 * (iteracion)):30 + ((iteracion) * 30)])
         test_data = scaler.transform(test_data)
+        t=time.time()
         prediccion = clf_neuronal.predict(test_data)
+        print('Tiempo de predicción:'+str(time.time()-t))
         return prediccion
 
 

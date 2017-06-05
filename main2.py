@@ -43,6 +43,7 @@ if i==0:
     clasificar.start()
 
 
+
 elif i ==1:
     print('Modo personalizado seleccionado')
     numero_muestras = input('A continuación se procederá a introducir las muestras personalmente, elige el número de muestras (multiplo de 6): ')

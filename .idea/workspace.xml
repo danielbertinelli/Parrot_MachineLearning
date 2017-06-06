@@ -18,8 +18,8 @@
       <file leaf-file-name="CrossVal_plotCVdigits2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CrossValidation-Metrics/CrossVal_plotCVdigits2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="46" column="10" lean-forward="false" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+            <state relative-caret-position="731">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <element signature="e#16#59#0" expanded="true" />
               </folding>
@@ -34,6 +34,8 @@
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
+                <marker date="1496244572000" expanded="true" signature="502:1325" ph="..." />
+                <marker date="1496244572000" expanded="true" signature="2603:2945" ph="..." />
               </folding>
             </state>
           </provider>
@@ -42,21 +44,31 @@
       <file leaf-file-name="land.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/land.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state relative-caret-position="175">
+              <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="v10.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/v10.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-11671">
+              <caret line="245" column="96" lean-forward="false" selection-start-line="245" selection-start-column="96" selection-end-line="245" selection-end-column="96" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,8 +86,8 @@
       <file leaf-file-name="gestiondatos.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/gestiondatos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -84,8 +96,8 @@
       <file leaf-file-name="communications.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/communications.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="-17">
+              <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -94,11 +106,9 @@
       <file leaf-file-name="algoritmos.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/algoritmos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-17">
+              <caret line="15" column="99" lean-forward="false" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -123,6 +133,7 @@
       <find>con</find>
       <find>dentr</find>
       <find>dentro</find>
+      <find>digitos_prediccion2</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Usuario\Downloads\WinPython-32bit-3.6.1.0Qt5\python-3.6.1\Lib\site-packages\pyardrone</dir>
@@ -135,7 +146,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/basedatosthreading.py" />
-        <option value="$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/pyardrone/__init__.py" />
+        <option value="$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/pyardrone/__init__.py" />
         <option value="$PROJECT_DIR$/libs/graphics.py" />
         <option value="$PROJECT_DIR$/pruevas_cv.py" />
         <option value="$PROJECT_DIR$/pruebas_cv.py" />
@@ -159,22 +170,21 @@
         <option value="$PROJECT_DIR$/libs/filterings.py" />
         <option value="$PROJECT_DIR$/v22.csv" />
         <option value="$PROJECT_DIR$/v11.csv" />
-        <option value="$PROJECT_DIR$/libs/algoritmos.py" />
         <option value="$PROJECT_DIR$/CrossValidation-Metrics/CrossVal_plotCVdigits2.py" />
-        <option value="$PROJECT_DIR$/v10.csv" />
-        <option value="$PROJECT_DIR$/main2.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/libs/communications.py" />
-        <option value="$PROJECT_DIR$/libs/gestiondatos.py" />
         <option value="$PROJECT_DIR$/land.py" />
+        <option value="$PROJECT_DIR$/main2.py" />
+        <option value="$PROJECT_DIR$/libs/communications.py" />
+        <option value="$PROJECT_DIR$/libs/algoritmos.py" />
+        <option value="$PROJECT_DIR$/libs/gestiondatos.py" />
+        <option value="$PROJECT_DIR$/v10.csv" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1378" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -191,25 +201,27 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Parrot_MachineLearning-master" />
+              <option name="myItemId" value="Parrot_MachineLearning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Parrot_MachineLearning-master" />
+              <option name="myItemId" value="Parrot_MachineLearning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Parrot_MachineLearning-master" />
+              <option name="myItemId" value="Parrot_MachineLearning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Parrot_MachineLearning-master" />
+              <option name="myItemId" value="Parrot_MachineLearning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -217,24 +229,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Parrot_MachineLearning-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Parrot_MachineLearning-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CrossValidation-Metrics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -497,13 +493,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="1378" height="735" extended-state="1" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12591508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12555066" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34517765" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3488" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -550,7 +545,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/pyardrone/__init__.py" />
+    <entry file="file://$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/pyardrone/__init__.py" />
     <entry file="file://$PROJECT_DIR$/libs/modes.py" />
     <entry file="file://$PROJECT_DIR$/libs/graphics.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -559,17 +554,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/model_selection/_validation.py" />
+    <entry file="file://$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/model_selection/_validation.py" />
     <entry file="file://$PROJECT_DIR$/pruevas_cv.py" />
-    <entry file="file://$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/svm/classes.py" />
-    <entry file="file://$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/model_selection/_search.py" />
-    <entry file="file://$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/neural_network/multilayer_perceptron.py" />
-    <entry file="file://$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/model_selection/_split.py" />
+    <entry file="file://$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/svm/classes.py" />
+    <entry file="file://$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/model_selection/_search.py" />
+    <entry file="file://$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/neural_network/multilayer_perceptron.py" />
+    <entry file="file://$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/model_selection/_split.py" />
     <entry file="file://$PROJECT_DIR$/takeoff.py" />
     <entry file="file://$PROJECT_DIR$/pruebas_cv2.py" />
-    <entry file="file://$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/matplotlib/pyplot.py" />
+    <entry file="file://$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/matplotlib/pyplot.py" />
     <entry file="file://$PROJECT_DIR$/CrossVal_plotCVdigits.py" />
-    <entry file="file://$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/numpy/core/function_base.py" />
+    <entry file="file://$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/numpy/core/function_base.py" />
     <entry file="file://$PROJECT_DIR$/libs/normalizado.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -596,8 +591,8 @@
     <entry file="file://$PROJECT_DIR$/basedatosthreading.py" />
     <entry file="file://$PROJECT_DIR$/../pruebas-trheading.py" />
     <entry file="file://$PROJECT_DIR$/../2Parrot_MachineLearning-masterbis/Parrot_MachineLearning-master/pruebas-trheading4.py" />
-    <entry file="file://$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/pyardrone/navdata/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/../../../WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/preprocessing/data.py" />
+    <entry file="file://$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/pyardrone/navdata/__init__.py" />
+    <entry file="file://$USER_HOME$/WinPython-32bit-3.6.1.0Qt5/python-3.6.1/Lib/site-packages/sklearn/preprocessing/data.py" />
     <entry file="file://$PROJECT_DIR$/CrossValidation-Metrics/v8.csv" />
     <entry file="file://$PROJECT_DIR$/libs/filterings.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -654,27 +649,10 @@
     <entry file="file://C:/WinPython-64bit-3.5.3.0Qt5/python-3.5.3.amd64/Lib/site-packages/sklearn/tree/tree.py" />
     <entry file="file://$PROJECT_DIR$/CrossValidation-Metrics/CrossVal_plotCVdigits2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="46" column="10" lean-forward="false" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+        <state relative-caret-position="731">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="e#16#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/v10.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4165">
-          <caret line="245" column="96" lean-forward="false" selection-start-line="245" selection-start-column="96" selection-end-line="245" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/algoritmos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -685,6 +663,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
+            <marker date="1496244572000" expanded="true" signature="502:1325" ph="..." />
+            <marker date="1496244572000" expanded="true" signature="2603:2945" ph="..." />
           </folding>
         </state>
       </provider>
@@ -699,35 +679,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/land.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/communications.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="-17">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/gestiondatos.py">
+    <entry file="file://$PROJECT_DIR$/libs/algoritmos.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+        <state relative-caret-position="-17">
+          <caret line="15" column="99" lean-forward="false" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="175">
+          <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/gestiondatos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v10.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11671">
+          <caret line="245" column="96" lean-forward="false" selection-start-line="245" selection-start-column="96" selection-end-line="245" selection-end-column="96" />
+          <folding />
         </state>
       </provider>
     </entry>

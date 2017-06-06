@@ -13,9 +13,9 @@ np.random.seed(777)
 
 
 # Creación del clasificador y entrenamiento
-#clf_neuronal = MLPClassifier(solver='lbfgs', alpha=0.000000000001, early_stopping=True, max_iter=9,
- #                            hidden_layer_sizes=12)
-clf_neuronal = DecisionTreeClassifier()
+clf_neuronal = MLPClassifier(solver='lbfgs', alpha=0.000000000001, early_stopping=True, max_iter=26,
+                             hidden_layer_sizes=12)
+#clf_neuronal = DecisionTreeClassifier()
 class Algoritmos():
 
     # Entrenamiento del algoritmo clasificador

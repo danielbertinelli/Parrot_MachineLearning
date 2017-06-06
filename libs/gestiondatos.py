@@ -31,6 +31,7 @@ x = []
 y = []
 z = []
 digitos_prediccion = []
+digitos_prediccion2 = []
 muestras = []
 vectorguardado=[]
 class GestiondeDatos():
@@ -139,6 +140,7 @@ class GestiondeDatos():
 
         print('Fichero Guardado')
         print('Vector a guardar: '+str(vectorguardado))
+        digitos_prediccion.clear()
 
         for i in range(len(vectorguardado)):
             vector_aux = vectorguardado[i]
@@ -152,6 +154,7 @@ class GestiondeDatos():
             archi.write('\n')
 #Metodo para leer y clasificarr las muestras
     def leedatos(self):
+        print(str(digitos_prediccion))
         contador = -1
         tiempo_inicial_lectura = time.time()
 

@@ -7,7 +7,7 @@
 
 import serial
 
-s = serial.Serial('/dev/ttyACM0', baudrate=115200,timeout=None)  # open serial port
+s = serial.Serial('COM3', baudrate=115200, timeout=None, rtscts=True, dsrdtr=True)  # open serial port
 
 
 class CommunicationManager():

@@ -180,7 +180,9 @@ class GestiondeDatos():
     # #Metodo para clasificar
     def clasifica_muestras(self):
         mixer.init()
-
+        alertamovimiento = mixer.Sound("DeskBell.wav")
+        alertamal = mixer.Sound("buzzer.wav")
+        alertamodo = mixer.Sound("ding.wav")
         n_iteraciones = 0
         t=time.time()
         while time.time()-t<=1300:
@@ -194,32 +196,28 @@ class GestiondeDatos():
 
                     if prediccion == 1:
                         print('arriba')
+                        alertamovimiento.play()
 
-                        #alertabien.play()
-                        # alertamovimiento.play()
                     if prediccion == 2:
                         print('abajo')
+                        alertamovimiento.play()
 
-                        #alertamal.play()
-                        # alertamovimiento.play()
                     if prediccion == 3:
                         print('derecha')
-                        #alertamal.play()
-                        # alertamovimiento.play()
+                        alertamovimiento.play()
+
                     if prediccion == 4:
                         print('izquierda')
+                        alertamovimiento.play()
 
-                        #alertamal.play()
-                        # alertamovimiento.play()
                     if prediccion == 5:
                         print('modo2')
+                        alertamodo.play()
 
-                        #alertamal.play()
-                        # alertamodo.play()
                     if prediccion == 0:
                         print('random')
+                        alertamal.play()
 
-                        #alertamal.play()
             except:
                 time.sleep(0.4)# alertamovimiento.play()
             time.sleep(1)
@@ -233,7 +231,8 @@ class GestiondeDatos():
         n_iteraciones = 0
         mixer.init()
         alertamovimiento = mixer.Sound("DeskBell.wav")
-        alertamodo = mixer.Sound("buzzer.wav")
+        alertamal = mixer.Sound("buzzer.wav")
+        alertamodo=mixer.Sound("ding.wav")
         n_pruebas = 0
 
 
@@ -289,8 +288,8 @@ class GestiondeDatos():
                         else:  # movimientos plano horizontal
                             if drone.state.fly_mask == True:  # está volando
                                 time1 = time.time()
-                                while time.time() - time1 <= 0.75:
-                                    drone.move(backward=0.3)
+                                while time.time() - time1 <= 1:
+                                    drone.move(backward=0.15)
                                 alertamovimiento.play()
                                 time.sleep(0.15)
                         cont_predicciones += 1
@@ -308,8 +307,8 @@ class GestiondeDatos():
                         else:  # movimientos horizontales
                             if drone.state.fly_mask == True:  # volando
                                 time1 = time.time()
-                                while time.time() - time1 <= 0.75:
-                                    drone.move(forward=0.3)
+                                while time.time() - time1 <= 1:
+                                    drone.move(forward=0.15)
                                 alertamovimiento.play()
                                 time.sleep(0.15)
                         cont_predicciones += 1
@@ -319,7 +318,7 @@ class GestiondeDatos():
                         cont_predicciones += 1
                         time2 = time.time()
                         while time.time() - time2 <= 1:
-                            drone.move(right=0.2)
+                            drone.move(right=0.1)
                         alertamovimiento.play()
                         time.sleep(0.15)
 
@@ -329,7 +328,7 @@ class GestiondeDatos():
                         cont_predicciones += 1
                         time1 = time.time()
                         while time.time() - time1 <= 1:
-                            drone.move(left=0.2)
+                            drone.move(left=0.1)
                         alertamovimiento.play()
                         time.sleep(0.15)
 
@@ -337,8 +336,9 @@ class GestiondeDatos():
                         print('modo2')
                         if drone.state.fly_mask == True and old_prediction[cont_predicciones - 1] == 5:
                             drone.land()
-                            alertamovimiento.play()
+                            alertamodo.play()
                             time.sleep(0.1)
+                            sys.exit()
 
                         else:
                             modo = not modo
@@ -348,7 +348,7 @@ class GestiondeDatos():
 
                     elif prediccion == 0:
                         print('random')
-                        alertamodo.play()
+                        alertamal.play()
                         time.sleep(0.15)
                         cont_predicciones += 1
                     if cont_predicciones >= 1:

@@ -48,10 +48,10 @@ elif i ==1:
     print('Modo personalizado seleccionado')
     numero_muestras = input('A continuación se procederá a introducir las muestras personalmente, elige el número de muestras (multiplo de 6): ')
     numero_muestras = int(numero_muestras)
-    velocidad = input('Introduce la velocidad de adquisición, 10-Rápido - 3-Lento:')
+    velocidad = input('Introduce la velocidad de adquisición, 10-Rápido - 3-Lento: ')
     velocidad = int(velocidad)
     print('El numero elegido es :'+str(numero_muestras)+' por lo tanto se introducirán '+str(numero_muestras/6)+'muestras.')
-    filename = input(('Introduce el nombre del fichero:'))
+    filename = input(('Introduce el nombre del fichero: '))
 
     time.sleep(1)
 

@@ -316,21 +316,35 @@ class GestiondeDatos():
                     elif prediccion == 3:
                         print('derecha')
                         cont_predicciones += 1
-                        time2 = time.time()
-                        while time.time() - time2 <= 1:
-                            drone.move(right=0.1)
-                        alertamovimiento.play()
-                        time.sleep(0.15)
+                        if modo==True:
+                            time2 = time.time()
+                            while time.time() - time2 <= 1:
+                                drone.move(right=0.1)
+                            alertamovimiento.play()
+                            time.sleep(0.15)
+                        else:
+                            time3 = time.time()
+                            while time.time()-time3<=1:
+                                drone.move(cw=0.3)
+                            alertamovimiento.play()
+                            time.sleep(0.15)
 
 
                     elif prediccion == 4:
                         print('izquierda')
                         cont_predicciones += 1
-                        time1 = time.time()
-                        while time.time() - time1 <= 1:
-                            drone.move(left=0.1)
-                        alertamovimiento.play()
-                        time.sleep(0.15)
+                        if modo == True:
+                            time1 = time.time()
+                            while time.time() - time1 <= 1:
+                                drone.move(left=0.1)
+                            alertamovimiento.play()
+                            time.sleep(0.15)
+                        else:
+                            time1=time.time()
+                            while time.time()-time1 <= 1:
+                                drone.move(ccw=0.3)
+                            alertamovimiento.play()
+                            time.sleep(0.15)
 
                     if prediccion == 5:
                         print('modo2')
@@ -338,6 +352,8 @@ class GestiondeDatos():
                             drone.land()
                             alertamodo.play()
                             time.sleep(0.1)
+                            print()
+                            print('Fin del vuelo.')
                             sys.exit()
 
                         else:
